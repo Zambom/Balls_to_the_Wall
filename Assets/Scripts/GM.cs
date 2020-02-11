@@ -37,6 +37,7 @@ public class GM : MonoBehaviour
     public void Setup()
     {
         clonePaddle = Instantiate(paddle, transform.position, Quaternion.identity) as GameObject;
+        Instantiate(wallPrefab, transform.position, Quaternion.identity);
     }
 
     void CheckGameOver()
@@ -79,7 +80,7 @@ public class GM : MonoBehaviour
     public void DestroyBrick()
     {
         bricks--;
-        startPoints += pointsUnit;
+        startPoints = startPoints + pointsUnit;
         pointsText.text = "Points: " + startPoints;
         CheckGameOver();
     }
