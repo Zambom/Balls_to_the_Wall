@@ -424,7 +424,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08eda0778d3e700afaf9e0e6f7b6b60e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  paddleSpeed: 1
+  paddleSpeed: 0.8
 --- !u!54 &2615335198647176910
 Rigidbody:
   m_ObjectHideFlags: 0
