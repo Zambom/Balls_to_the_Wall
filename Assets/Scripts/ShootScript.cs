@@ -23,6 +23,8 @@ public class ShootScript : MonoBehaviour
 
             tmpRb.isKinematic = false;
             tmpRb.AddForce(new Vector3(0, force, 0));
+
+            Destroy(tmpBullet, 10f);
         }
     }
 }
