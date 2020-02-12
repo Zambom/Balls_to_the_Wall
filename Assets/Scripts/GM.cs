@@ -15,6 +15,7 @@ public class GM : MonoBehaviour
     public Text pointsText;
     public GameObject gameOver;
     public GameObject winner;
+    public GameObject howToPlay;
     public GameObject wallPrefab;
     public GameObject paddle;
     public GameObject deathParticles;
@@ -41,6 +42,8 @@ public class GM : MonoBehaviour
     {
         clonePaddle = Instantiate(paddle, transform.position, Quaternion.identity) as GameObject;
         Instantiate(wallPrefab, transform.position, Quaternion.identity);
+
+        Destroy(howToPlay, 8f);
     }
 
     void CheckGameOver()
