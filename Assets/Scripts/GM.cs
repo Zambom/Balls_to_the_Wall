@@ -8,13 +8,14 @@ public class GM : MonoBehaviour
 {
     public int lives = 3;
     public int pointsUnit = 5;
-    public int startPoints = 0;
+    public int points = 0;
     public int bricks = 384;
     public float resetDelay = 1f;
     public Text livesText;
     public Text pointsText;
     public GameObject gameOver;
     public GameObject winner;
+    public GameObject howToPlay;
     public GameObject wallPrefab;
     public GameObject paddle;
     public GameObject deathParticles;
@@ -41,6 +42,8 @@ public class GM : MonoBehaviour
     {
         clonePaddle = Instantiate(paddle, transform.position, Quaternion.identity) as GameObject;
         Instantiate(wallPrefab, transform.position, Quaternion.identity);
+
+        Destroy(howToPlay, 8f);
     }
 
     void CheckGameOver()
@@ -71,6 +74,10 @@ public class GM : MonoBehaviour
         lives--;
         livesText.text = "Lives: " + lives;
         particlesClone = Instantiate(deathParticles, clonePaddle.transform.position, Quaternion.identity);
+
+        points = Mathf.Max(points - 50, 0);
+        pointsText.text = "Points: " + points;
+
         Destroy(clonePaddle);
         Invoke("SetupPaddle", resetDelay);
         CheckGameOver();
@@ -85,8 +92,8 @@ public class GM : MonoBehaviour
     public void DestroyBrick()
     {
         bricks--;
-        startPoints = startPoints + pointsUnit;
-        pointsText.text = "Points: " + startPoints;
+        points = points + pointsUnit;
+        pointsText.text = "Points: " + points;
         CheckGameOver();
     }
 }

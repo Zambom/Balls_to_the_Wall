@@ -2,17 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bricks : MonoBehaviour
+public class Roof : MonoBehaviour
 {
-
-    public GameObject brickParticles;
-
     void OnCollisionEnter(Collision other)
     {
-        Instantiate(brickParticles, transform.position, Quaternion.identity);
-        GM.instance.DestroyBrick();
-        Destroy(gameObject);
-
         if (other.gameObject.tag == "bullet")
         {
             Destroy(other.gameObject);

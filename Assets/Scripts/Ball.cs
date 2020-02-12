@@ -9,6 +9,14 @@ public class Ball : MonoBehaviour
     private Rigidbody rigidbody;
     private bool moving;
 
+    void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.tag == "bullet")
+        {
+            Physics.IgnoreCollision(other.collider, GetComponent<Collider>());
+        }
+    }
+
     void Awake()
     {
         rigidbody = GetComponent<Rigidbody>();
@@ -17,7 +25,7 @@ public class Ball : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1") && !moving)
+        if (Input.GetKeyDown("space") && !moving)
         {
             transform.parent = null;
             moving = true;
