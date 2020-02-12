@@ -6,13 +6,7 @@ public class ShootScript : MonoBehaviour
 {
     public GameObject Gun;
     public GameObject Bullet;
-    public float force = 100f;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
+    public float force = 700f;
 
     // Update is called once per frame
     void Update()
