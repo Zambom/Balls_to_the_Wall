@@ -12,5 +12,10 @@ public class Bricks : MonoBehaviour
         Instantiate(brickParticles, transform.position, Quaternion.identity);
         GM.instance.DestroyBrick();
         Destroy(gameObject);
+
+        if (other.gameObject.tag == "bullet")
+        {
+            Destroy(other.gameObject);
+        }
     }
 }
