@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GM : MonoBehaviour
 {
@@ -16,9 +17,11 @@ public class GM : MonoBehaviour
     public GameObject winner;
     public GameObject wallPrefab;
     public GameObject paddle;
+    public GameObject deathParticles;
     public static GM instance = null;
 
     private GameObject clonePaddle;
+    private GameObject particlesClone;
 
     void Awake()
     {
@@ -60,13 +63,14 @@ public class GM : MonoBehaviour
     void Reset()
     {
         Time.timeScale = 1f;
-        Application.LoadLevel(Application.loadedLevel);
+        SceneManager.LoadScene("SampleScene");
     }
 
     public void LoseLife()
     {
         lives--;
         livesText.text = "Lives: " + lives;
+        particlesClone = Instantiate(deathParticles, clonePaddle.transform.position, Quaternion.identity);
         Destroy(clonePaddle);
         Invoke("SetupPaddle", resetDelay);
         CheckGameOver();
@@ -75,6 +79,7 @@ public class GM : MonoBehaviour
     void SetupPaddle()
     {
         clonePaddle = Instantiate(paddle, transform.position, Quaternion.identity) as GameObject;
+        Destroy(particlesClone);
     }
 
     public void DestroyBrick()
