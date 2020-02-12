@@ -52,6 +52,7 @@
      <Compile Include="Assets\Scripts\DeathZone.cs" />
      <Compile Include="Assets\Scripts\GM.cs" />
      <Compile Include="Assets\Scripts\Paddle.cs" />
+     <Compile Include="Assets\Scripts\Roof.cs" />
      <Compile Include="Assets\Scripts\ShootScript.cs" />
      <Compile Include="Assets\Scripts\SpectrumAnalyzer.cs" />
  <Reference Include="UnityEngine">

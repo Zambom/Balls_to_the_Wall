@@ -332,6 +332,7 @@ GameObject:
   - component: {fileID: 684438365}
   - component: {fileID: 684438364}
   - component: {fileID: 684438363}
+  - component: {fileID: 684438367}
   m_Layer: 0
   m_Name: Roof
   m_TagString: Untagged
@@ -413,6 +414,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &684438367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 684438362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fc2cb9d35c1726d685134b472a27cc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -624,7 +637,7 @@ MonoBehaviour:
   winner: {fileID: 2121685382}
   wallPrefab: {fileID: 8885807789433771331, guid: c6f680ee389f6564c8b27f326358d27e,
     type: 3}
-  paddle: {fileID: 4351003130623290693, guid: 86920dad1a42347f28d42a0a06b7a847, type: 3}
+  paddle: {fileID: 6586787891936109870, guid: 9720394ee299b9cb392ac7fa1fd1ff04, type: 3}
   deathParticles: {fileID: 2790378322672550674, guid: a6bec6f056c17dfba86a4b9fb8963aa8,
     type: 3}
 --- !u!4 &899448809
